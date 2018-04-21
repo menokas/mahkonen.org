@@ -4,7 +4,8 @@ Home page project for mahkonen.org
 - Generating the web backend (Go server)
 - Using Jquery, Bootsrap, web-components and Polymmer (testing)
 - Learning CI/CD
-APIs:
+
+TODOs:
 - Iamge server fro family fotos
 - IoT
 	- Temperature sensors Arduino
