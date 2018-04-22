@@ -1,0 +1,22 @@
+swagger: '2.0'
+info:
+  title: Mahkonen.org
+  description: Mahkonen.org server interfaces
+  version: "0.0.1"
+  
+host: www.mahkonen.org
+schemes:
+  - http
+
+paths:
+  /:
+    get:
+      summary: Homepage root
+      description: Server index.html
+      produces:
+        - text/html
+      responses:
+        200:
+          description: index.html
+          schema:
+            type: file
