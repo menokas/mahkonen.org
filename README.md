@@ -55,4 +55,6 @@ sudo apt-get update
 sudo apt-get install jenkins
 sudo service start jenkins
 sudo service status jenkins
-Open firewall for tcp port 8080. With a browser go to server port 8080. Then initial admin password is in /var/lib//jenkins/secrets/initialAdminPassword file. Use it to login and install suggested plugins. Create first admin account and login.
+sudo ufw allow 8080
+
+With a browser go to server port 8080. Then initial admin password is in /var/lib//jenkins/secrets/initialAdminPassword file. Use it to login and install suggested plugins. Create first admin account and login.
