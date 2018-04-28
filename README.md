@@ -84,4 +84,4 @@ With a browser go to server port 8080. Then initial admin password is in /var/li
 ## TBD:
 * https://www.digitalocean.com/community/tutorials/how-to-configure-jenkins-with-ssl-using-an-nginx-reverse-proxy
 * https://www.digitalocean.com/community/tutorials/how-to-set-up-continuous-integration-pipelines-in-jenkins-on-ubuntu-16-04
-https://jenkins.io/doc/pipeline/tour/hello-world/
+* https://jenkins.io/doc/pipeline/tour/hello-world/
