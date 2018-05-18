@@ -56,6 +56,7 @@ sudo ln -s /etc/nginx/sites-available/<domainname> /etc/nginx/sites-enabled
 sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.orig (Just in case!)
 sudo sed -i.bak 's/# server_names_hash_bucket_size 64;/server_names_hash_bucket_size 64;/' /etc/nginx/nginx.conf
 sudo nginx -t (To check configs!)
+systemctl restart nginx
 ```
 
 ### HTTPS (https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04):
