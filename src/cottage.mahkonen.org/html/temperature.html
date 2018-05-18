@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <script type="text/javascript" src="js/dygraph.js"></script>
+    <link rel="stylesheet" src="css/dygraph.css" />
+  </head>
+  <body>
+    <div id="graphdiv"></div>
+    <script type="text/javascript">
+      var req = new XMLHttpRequest();
+      req.onreadystatechange = function () {
+        if (req.readyState == 4) {
+          if (req.status === 200 || // Normal http
+              req.status === 0) { // Chrome w/ --allow-file-access-from-files
+            var data = req.responseText;
+            drawGraph(data);
+          }
+        }
+      };
+      req.open('GET', 'temperature.php', true);
+      req.send(null);
+      var drawGraph = function(data) {
+	var readings = JSON.parse(data);
+	//var temp_csv = "Time,raw,celcius\n";
+	var temp_csv = "Time,celcius\n";
+	for (i in readings) {
+	  //temp_csv = temp_csv.concat(readings[i].TIME,",",readings[i].RAW_READING,",",readings[i].TEMPERATURE,"\n");
+	  temp_csv = temp_csv.concat(readings[i].TIME,",",readings[i].TEMPERATURE,"\n");
+
+	}
+        new Dygraph(document.getElementById("graphdiv"), temp_csv);
+      }
+    </script>
+  </body>
+</html>
