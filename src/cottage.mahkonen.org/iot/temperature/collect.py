@@ -19,8 +19,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Create table as per requirement
-    sql = """CREATE TABLE IF NOT EXISTS TEMPERATURE (ID INT AUTO_INCREMENT NOT NULL, TIME TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, RAW_READING INT, TEMPERATURE FLOAT, PRIMARY KEY(ID))"""
-    cursor.execute(sql)
+    #sql = """CREATE TABLE IF NOT EXISTS TEMPERATURE (ID INT AUTO_INCREMENT NOT NULL, TIME TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, RAW_READING INT, TEMPERATURE FLOAT, PRIMARY KEY(ID))"""
+    #cursor.execute(sql)
     try:
         while True:
             reading = int(collector.read())
