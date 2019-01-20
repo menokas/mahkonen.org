@@ -19,10 +19,12 @@ class MyRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
         sio.flush()
         temperature = sio.read().strip()
         ret = {}
-        ret['temperature'] = temperature
-        ret['raw'] = int(time.time())
+        ret['raw'] = temperature
+        ret['time'] = int(time.time())
         # https://create.arduino.cc/projecthub/karimmufte/using-a-temp-sensor-with-arduino-tmp36-temperature-sensor-1e1d0b
+        ret['raw'] = temperature
         ret['celsius'] = float(temperature) * 0.48828125
+        ret['farenheit'] =  1.8 * (ret['celsius'] + 32.0);
         self._set_headers()
         self.wfile.write(json.dumps(ret))
 
